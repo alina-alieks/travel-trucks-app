@@ -1,0 +1,36 @@
+.label {
+  display: block;
+  font-weight: 400;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.wrapInput {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  border: none;
+  padding: 18px 20px;
+  background-color: var(--inputs);
+  fill: var(--gray);
+}
+
+.wrapInput:focus-within .icon {
+  fill: var(--main);
+}
+.input {
+  border: none;
+  background-color: transparent;
+  margin-left: 8px;
+  outline: transparent;
+  outline-offset: 2px;
+}
+
+.input::placeholder {
+  color: var(--gray);
+}
