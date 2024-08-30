@@ -3,7 +3,7 @@ import css from "./NotFoundPage.module.css";
 
 export default function NotFoundPage() {
   return (
-    <p>
+    <p className={css.divNotFoundMessage}>
       Oops! Page not found. Please turn to
       <Link to="/" className={css.linkHome}>
         {" "}
