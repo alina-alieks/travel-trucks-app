@@ -13,7 +13,7 @@ export default function Location() {
           id="location"
           className={css.input}
           type="text"
-          placeholder="Kyiv, Ukraine"
+          placeholder="City"
         ></input>
       </div>
     </div>
