@@ -20,8 +20,8 @@ export const getCamperById = createAsyncThunk(
   "campers/getCamperById",
   async (id, thunkAPI) => {
     try {
-      const response = await axios.delete(`/campers/${id}`);
-      //   console.log(response.data);
+      const response = await axios.get(`/campers/${id}`);
+      console.log(response.data);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

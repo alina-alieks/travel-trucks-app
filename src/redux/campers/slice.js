@@ -6,6 +6,7 @@ const slice = createSlice({
   initialState: {
     items: [],
     totalItems: null,
+    choosenItem: null,
     loading: false,
     error: null,
   },
@@ -28,7 +29,7 @@ const slice = createSlice({
       })
       .addCase(getCamperById.fulfilled, (state, action) => {
         state.loading = false;
-        state.items.find((item) => item.id === action.payload.id);
+        state.choosenItem = action.payload;
       })
       .addCase(getCamperById.rejected, (state, action) => {
         state.loading = false;
