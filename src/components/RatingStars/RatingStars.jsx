@@ -1,3 +1,7 @@
+import star from "../../images/rating-star/rating.png";
+import starRetina from "../../images/rating-star/rating@2x.png";
+import starDis from "../../images/rating-star/ratingDis.png";
+import starRetinaDis from "../../images/rating-star/ratingDis@2x.png";
 import css from "./RatingStars.module.css";
 
 export default function RatingStars({ rating }) {
@@ -6,16 +10,8 @@ export default function RatingStars({ rating }) {
   const stars = [...Array(totalStars)].map((_, index) => (
     <img
       key={index}
-      src={
-        index < rating
-          ? "/src/images/rating-star/rating.png"
-          : "/src/images/rating-star/ratingDis.png"
-      }
-      srcSet={
-        index < rating
-          ? "/src/images/rating-star/rating@2x.png 2x"
-          : "/src/images/rating-star/ratingDis@2x.png 2x,"
-      }
+      src={index < rating ? star : starDis}
+      srcSet={index < rating ? `${starRetina} 2x` : `${starRetinaDis} 2x`}
       alt="Rating Star"
       width="16"
       height="16"
