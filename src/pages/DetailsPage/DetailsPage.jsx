@@ -43,9 +43,7 @@ export default function DetailsPage() {
         <ul className={css.addInfoList}>
           <li className={css.textList}>
             <NavLink
-              className={({ isActive }) =>
-                clsx(css.navLink, isActive && css.navLink)
-              }
+              className={({ isActive }) => clsx(isActive && css.navLink)}
               to="features"
             >
               Features
