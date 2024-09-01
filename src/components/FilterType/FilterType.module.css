@@ -30,7 +30,8 @@
 }
 
 .item:hover,
-.item:focus {
+.item:focus,
+.itemMatch {
   border-color: var(--button);
 }
 

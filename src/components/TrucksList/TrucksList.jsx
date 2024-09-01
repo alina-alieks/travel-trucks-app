@@ -1,11 +1,12 @@
 import { useSelector } from "react-redux";
-import { selectAllCampers } from "../../redux/campers/selectors";
+import { selectFilteredCampers } from "../../redux/campers/selectors";
 import TruckItem from "../TruckItem/TruckItem";
 
 import css from "./TrucksList.module.css";
 
 export default function TrucksList() {
-  const campers = useSelector(selectAllCampers);
+  const campers = useSelector(selectFilteredCampers);
+  console.log(campers);
   return (
     <ul className={css.list}>
       {campers.map((item) => (
