@@ -1,0 +1,47 @@
+.wrapper {
+  padding-top: 44px;
+  display: flex;
+  gap: 40px;
+
+  border-top: 1px solid var(--gray-light);
+}
+.listItem {
+  margin-bottom: 44px;
+}
+.listItem:last-child {
+  margin-bottom: none;
+}
+.wrapReviews {
+  width: 631px;
+  flex-shrink: 0;
+}
+
+.wrapName {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.avatar {
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--badges);
+  margin-bottom: 4px;
+}
+.letterAva {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--button);
+}
+
+.comment {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+}
