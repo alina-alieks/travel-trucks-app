@@ -15,3 +15,20 @@
   display: flex;
   gap: 24px;
 }
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--gray-light);
+  border-radius: 200px;
+  padding: 16px 32px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: border 250ms linear;
+}
+
+.button:hover {
+  border: 1px solid var(--button-hover);
+}
