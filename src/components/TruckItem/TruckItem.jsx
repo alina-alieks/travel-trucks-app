@@ -1,10 +1,28 @@
-import css from "./TruckItem.module.css";
 import Icon from "../Icon/Icon";
 import Button from "../Button/Button";
 import EquipmentList from "../EquipmentList/EquipmentList";
 import CamperRatingLocation from "../CamperRatingLocation/CamperRatingLocation";
+import { useDispatch, useSelector } from "react-redux";
+import { addToFavorite, removeFromFavorite } from "../../redux/favorites/slice";
+import clsx from "clsx";
+import { selectFavorites } from "../../redux/favorites/selectors";
+import css from "./TruckItem.module.css";
 
 export default function TruckItem({ camper }) {
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites);
+  console.log(favorites);
+
+  const isFavorite = favorites.some((item) => item.id === camper.id);
+
+  const handleFavoriteClick = () => {
+    if (isFavorite) {
+      dispatch(removeFromFavorite(camper.id));
+    } else {
+      dispatch(addToFavorite(camper));
+    }
+  };
+
   return (
     <>
       <div className={css.wrapImg}>
@@ -19,7 +37,15 @@ export default function TruckItem({ camper }) {
           <h2>{camper.name}</h2>
           <div className={css.wrapPriceIcon}>
             <p>€{parseFloat(camper.price).toFixed(2)}</p>
-            <Icon className={css.iconHeart} id="heart" />
+            <div
+              className={clsx(
+                css.wrapIconHeart,
+                isFavorite && css.iconHeartChoose
+              )}
+              onClick={handleFavoriteClick}
+            >
+              <Icon className={css.iconHeart} id="heart" />
+            </div>
           </div>
         </div>
         <CamperRatingLocation camper={camper} />

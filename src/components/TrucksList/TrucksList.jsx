@@ -13,7 +13,7 @@ export default function TrucksList() {
   };
 
   const campers = useSelector(selectFilteredCampers);
-  console.log(campers);
+  // console.log(campers);
 
   return (
     <div>

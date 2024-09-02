@@ -23,16 +23,21 @@
   color: var(--main);
 }
 
-.iconHeart {
+.wrapIconHeart {
   width: 24px;
   height: 24px;
   fill: var(--main);
+
   transition: color 250ms linear;
 }
-
-.iconHeart:hover,
-.iconHeart:focus,
-.iconHeart:active {
+.iconHeart {
+  width: 24px;
+  height: 24px;
+}
+.wrapIconHeart:hover,
+.wrapIconHeart:focus,
+.wrapIconHeart:active,
+.iconHeartChoose {
   fill: var(--button);
 }
 
