@@ -21,7 +21,6 @@ export default function DetailsPage() {
   }, [dispatch]);
 
   const camper = useSelector(selectChoosenItem);
-  console.log(camper);
 
   return (
     !loading &&

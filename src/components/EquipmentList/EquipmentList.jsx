@@ -43,6 +43,26 @@ export default function EquipmentList({ camper }) {
             <p>bathroom</p>
           </div>
         )}
+        {camper.refrigerator && (
+          <div className={css.wrapCard}>
+            <p>refrigerator</p>
+          </div>
+        )}
+        {camper.microwave && (
+          <div className={css.wrapCard}>
+            <p>microwave</p>
+          </div>
+        )}
+        {camper.gas && (
+          <div className={css.wrapCard}>
+            <p>gas</p>
+          </div>
+        )}
+        {camper.water && (
+          <div className={css.wrapCard}>
+            <p>water</p>
+          </div>
+        )}
       </div>
     </>
   );
