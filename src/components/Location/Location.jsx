@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import Icon from "../Icon/Icon";
-import css from "./Location.module.css";
 import { selectFiltersLocation } from "../../redux/filters/selectors";
 import { changeFilterLocation } from "../../redux/filters/slice";
+import css from "./Location.module.css";
 
 export default function Location() {
   const dispatch = useDispatch();

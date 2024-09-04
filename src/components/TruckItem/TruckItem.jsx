@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToFavorite, removeFromFavorite } from "../../redux/favorites/slice";
 import clsx from "clsx";
 import { selectFavorites } from "../../redux/favorites/selectors";
+import { useEffect, useState } from "react";
 import css from "./TruckItem.module.css";
 
 export default function TruckItem({ camper }) {
@@ -13,7 +14,10 @@ export default function TruckItem({ camper }) {
   const favorites = useSelector(selectFavorites);
   console.log(favorites);
 
-  const isFavorite = favorites.some((item) => item.id === camper.id);
+  const [isFavorite, setIsFaforite] = useState(false);
+  useEffect(() => {
+    setIsFaforite(favorites.some((item) => item.id === camper.id));
+  }, [favorites, camper.id]);
 
   const handleFavoriteClick = () => {
     if (isFavorite) {
@@ -40,7 +44,7 @@ export default function TruckItem({ camper }) {
             <div
               className={clsx(
                 css.wrapIconHeart,
-                isFavorite && css.iconHeartChoose
+                isFavorite ? css.iconHeartChoose : css.wrapIconHeart
               )}
               onClick={handleFavoriteClick}
             >

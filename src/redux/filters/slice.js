@@ -33,6 +33,15 @@ const slice = createSlice({
     changeFilterForm(state, action) {
       state.form = action.payload;
     },
+    resetAllFilters(state) {
+      state.location = "";
+      state.ac = false;
+      state.automatic = false;
+      state.kitchen = false;
+      state.tv = false;
+      state.bathroom = false;
+      state.form = "";
+    },
   },
 });
 
@@ -44,6 +53,7 @@ export const {
   changeFilterTV,
   changeFilterBathroom,
   changeFilterForm,
+  resetAllFilters,
 } = slice.actions;
 
 export default slice.reducer;

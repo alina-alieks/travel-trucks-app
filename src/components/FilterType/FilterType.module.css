@@ -26,6 +26,7 @@
   width: calc((100% - 12px * 2) / 3);
   letter-spacing: -0.01em;
   color: var(--main);
+  cursor: pointer;
   transition: color 250ms linear;
 }
 
